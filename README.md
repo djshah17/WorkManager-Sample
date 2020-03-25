@@ -3,12 +3,12 @@ This is a demo app of how to use work manager in kotlin.
 
 
 ## Add the below dependency in your app level build.gradle file
-```
+```gradle
 implementation 'androidx.work:work-runtime-ktx:2.3.4'
 ```
 
 ## Create a Worker class
-```
+```kotlin
 class MyWorker(private val context: Context, private val workerParams: WorkerParameters) :
     Worker(context, workerParams) {
 
@@ -25,12 +25,12 @@ class MyWorker(private val context: Context, private val workerParams: WorkerPar
 ```
 
 ## Create a WorkManager instance to create work requests
-```
+```kotlin
 val workManager = WorkManager.getInstance(this)
 ```
 
 ## Start and Cancel WorkRequests
-```
+```kotlin
     private fun startOneTimeRequest(){
         val constraints = Constraints.Builder()
             .build()
